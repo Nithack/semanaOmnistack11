@@ -4,7 +4,7 @@ const connection = require('../database/connection');
 module.exports = {
 
     async index(request,response){
-        const {page = 1 } = request.query;
+        const { page = 1 } = request.query;
         
         const [count] = await connection('incidents').count();
 
@@ -17,7 +17,7 @@ module.exports = {
         'ongs.email',
         'ongs.whatsapp',
         'ongs.city',
-        'ongs.uf'
+        'ongs.uf',
         ]);
 
         response.header('X-Total-Count', count['count(*)']);
